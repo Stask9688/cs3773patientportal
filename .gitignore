@@ -1,0 +1,3 @@
+#Ignore the database
+.idea*
+Project/__pycache__*

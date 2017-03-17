@@ -25,24 +25,19 @@
 
 <!-- Container -->
 <div id="container">
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+<nav class="navbar navbar-inverse container-fluid" style="margin-bottom:0">
+  <div class="row">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a  class="navbar-brand" href="#" style="padding:5px">
-          <img alt="Brand" src = "http://www.ipharmd.net/images/black_caduceus_3D_button.png" height="45" width="45">
+    <div class="navbar-header col-md-5">
+      <a  class="navbar-brand" href="/" style="padding:5px">
+          <img style="display:inline-block" alt="Brand" src = "http://www.ipharmd.net/images/black_caduceus_3D_button.png" height="45" width="45">
+          <span style="display:inline-block">Patient Portal</span>
       </a>
     </div>
               {% block usertools %}
         {% if has_permission %}
-        <div id="user-tools" style="color:white">
-                        <ul class="nav navbar-nav navbar-right">
+        <div id="user-tools" style="color:white;padding-right:1%" class="col-md-6">
+          <ul class="nav navbar-nav navbar-right">
            <li style="padding-top:15px;padding-bottom:15px"> {% block welcome-msg %}
                 {% trans 'Welcome,' %}
                 <span>{% firstof user.get_short_name user.get_username %}</span></li>
@@ -70,13 +65,12 @@
   </div><!-- /.container-fluid -->
 </nav>
     <!-- END Header -->
-    {% block breadcrumbs %}
-    <div class="breadcrumbs">
+    {% if user.is_authenticated %}
+    <div class="breadcrumb">
     <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
     {% if title %} &rsaquo; {{ title }}{% endif %}
     </div>
-    {% endblock %}
-
+    {%endif%}
     {% block messages %}
         {% if messages %}
         <ul class="messagelist">{% for message in messages %}

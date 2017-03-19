@@ -28,7 +28,7 @@
 <nav class="navbar navbar-inverse container-fluid" style="margin-bottom:0">
   <div class="row">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header col-md-5">
+    <div class="navbar-header col-md-7">
       <a  class="navbar-brand" href="/" style="padding:5px">
           <img style="display:inline-block" alt="Brand" src = "http://www.ipharmd.net/images/black_caduceus_3D_button.png" height="45" width="45">
           <span style="display:inline-block">Patient Portal</span>
@@ -36,7 +36,7 @@
     </div>
               {% block usertools %}
         {% if has_permission %}
-        <div id="user-tools" style="color:white;padding-right:1%" class="col-md-6">
+        <div id="user-tools" style="color:white;padding-right:1%;margin:0" class="col-md-5">
           <ul class="nav navbar-nav navbar-right">
            <li style="padding-top:15px;padding-bottom:15px"> {% block welcome-msg %}
                 {% trans 'Welcome,' %}

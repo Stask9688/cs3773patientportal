@@ -28,6 +28,12 @@ ALLOWED_HOSTS = ['localhost', '70.121.173.194']
 
 # Application definition
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = "patientportalcs3773"
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = "this_is_a_secret_password"
+
 INSTALLED_APPS = [
     'Project',
     'PatientPortalUI',

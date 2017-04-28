@@ -20,4 +20,7 @@ from PatientPortalUI import views
 urlpatterns = [
     url(r'^', admin.site.urls),
     url(r'^home/', views.home),
+    url(r'^email/', views.send_email),
+    url(r'^password_reset/', views.password_reset_page),
+    url(r'^password_reset_submit', views.reset_submit),
 ]
